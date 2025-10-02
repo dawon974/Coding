@@ -1,12 +1,11 @@
-n, m = map(int, input().split())
-card = list(map(int, input().split()))
+from itertools import combinations
+
+card_num, target_num = map(int, input().split())
+card_list = list(map(int, input().split()))
 result = 0
 
-for i in range(n):
-    for j in range(i+1, n):
-        for k in range(j+1, n):
-            if card[i] + card[j] + card[k] > m:
-                continue
-            else:
-                result = max(result, card[i] + card[j] + card[k])
+for cards in combinations(card_list, 3):
+    temp_num = sum(cards)
+    if result < temp_num <= target_num:
+        result = temp_num
 print(result)
