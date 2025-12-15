@@ -2,18 +2,17 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-ca = list(map(int, input().split()))
-
+card = list(map(int, input().split()))
 m = int(input())
-ch = list(map(int, input().split()))
+check = list(map(int, input().split()))
 
-dic = {}
-for i in range(len(ca)):
-    dic[ca[i]] = 0
-    
+dict = {}
+
+for i in range(len(card)):
+    dict[card[i]] = 0
+ 
 for j in range(m):
-    if ch[j] in dic:
-        print(1, end= ' ')
+    if check[j] in dict:
+        print(1, end = ' ')
     else:
-        print(0, end= ' ')
-    
+        print(0, end = ' ')
